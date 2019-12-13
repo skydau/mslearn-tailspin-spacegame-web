@@ -64,7 +64,7 @@ namespace Tests
                 score => true, // return all scores
                 score => 1, // we don't care about the order
                 PAGE,
-                count // fetch this number of results
+                count > 0 ? count - 1 : 0 // fetch this number of results
             );
             IEnumerable<Score> scores = scoresTask.Result;
 
